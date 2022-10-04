@@ -13,28 +13,34 @@
   </head>
   <body>
   <section class="text-gray-600 body-font">
+
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
       
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Loan prediction project</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">fill the form for prediction</p>
+      <h1 class="font-medium title-font mb-4 text-gray-900 sm:text-5xl md:text-6xl">Loan prediction</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Fill the form for prediction</p>
       
+    </div>
+
+
+    <div>
+      <center><b><h2 class="text-red-900 body-font sm:text-4xl md:text-3xl">{{prediction_text}}</h2></b></center>
     </div>
 
     <a class="btn btn-primary" href="/" role="button">Back</a>
 <form action='/predict' method='POST'>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label"> gender</label>
+  <label for="exampleFormControlInput1" class="form-label"> Gender</label>
   <select class="form-select" id="gender" name="gender" aria-label="Default select example">
-  <option selected>-- select gender --</option>
+  <option selected>-- Select Gender --</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option>
 </select>
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label"> married status</label>
+  <label for="exampleFormControlInput1" class="form-label"> Married Status</label>
   <select class="form-select" id="married" name="married" aria-label="Default select example">
-  <option selected>-- select married status --</option>
+  <option selected>-- Select Married Status --</option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -42,7 +48,7 @@
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Dependents</label>
   <select class="form-select" id="dependents" name="dependents" aria-label="Default select example">
-  <option selected>-- select dependents --</option>
+  <option selected>-- Select Dependents --</option>
   <option value="0">0</option>
   <option value="1">1</option>
   <option value="2">2</option>
@@ -52,7 +58,7 @@
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Education</label>
   <select class="form-select" id="education" name="education" aria-label="Default select example">
-  <option selected>-- select education --</option>
+  <option selected>-- Select Education --</option>
   <option value="Graduate">Graduate</option>
   <option value="Not Graduate">Not Graduate</option>
 </select>
@@ -60,7 +66,7 @@
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Self_Employed</label>
   <select class="form-select" id="employed" name="employed" aria-label="Default select example">
-  <option selected>-- select Self_Employed --</option>
+  <option selected>-- Select Self_Employed --</option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -68,7 +74,7 @@
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Credit_History</label>
   <select class="form-select" id="credit" name="credit" aria-label="Default select example">
-  <option selected>-- select Credit_History --</option>
+  <option selected>-- Select Credit_History --</option>
   <option value="1.000000">1.000000</option>
   <option value="0.000000">0.000000</option>
 </select>
@@ -76,7 +82,7 @@
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Property_Area</label>
   <select class="form-select" id="area" name="area" aria-label="Default select example">
-  <option selected>-- select Property_Area --</option>
+  <option selected>-- Select Property_Area --</option>
   <option value="Semiurban">Semiurban</option>
   <option value="Urban">Urban</option>
   <option value="Rural">Rural</option>
@@ -105,9 +111,6 @@
     <button type="submit" class="btn btn-primary">Predict</button>
     </form>
 
-    <div>
-      <br><br><h2>{{prediction_text}}</h2>
-    </div>
 
   </div>
 

@@ -3,16 +3,12 @@ from flask import Flask, escape, request, render_template
 import pickle
 import numpy as np
 
-app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+# app = Flask(__name__)
+# model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
     return render_template("index.html")
-
-@app.route('/about')
-def about():
-    return render_template("about.html")
 
 
 @app.route('/predict', methods=['GET', 'POST'])
@@ -84,7 +80,7 @@ def predict():
             semiurban=0
             urban=0
 
-        prediction = model.predict([[ApplicantIncome, CoapplicantIncome, LoanAmount, Loan_Amount_Term, credit, male, married_yes, dependents_1, dependents_2, dependents_3, not_graduate, employed_yes, semiurban, urban]])
+        prediction = model.predict([[ApplicantIncome, LoanAmount, Loan_Amount_Term, credit, male, married_yes, dependents_1, dependents_2, dependents_3, not_graduate, employed_yes, semiurban, urban]])
 
 
         if(prediction=="N"):
@@ -93,7 +89,7 @@ def predict():
             prediction="Yes"
             
         
-        return render_template("prediction.html", prediction_text="Loan Status is {}".format(prediction))
+        return render_template("prediction.html", prediction_text="loan status is {}".format(prediction))
 
 
 
